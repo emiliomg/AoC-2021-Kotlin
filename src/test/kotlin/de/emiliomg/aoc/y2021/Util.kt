@@ -7,4 +7,8 @@ object Util {
 
         return data!!
     }
+
+    fun String.asStringList(): List<String> = this.split("\n")
+
+    fun String.asIntList(): List<Int> = this.asStringList().map { it.toInt() }
 }
