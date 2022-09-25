@@ -20,15 +20,15 @@ class Day2Test : FunSpec({
             }
         }
 
-//        context("Star2") {
-//            test("example") {
-//                val data = getInput("$prefix/example.txt").asIntList()
-//                Day2.star2(data) shouldBe 5
-//            }
-//            test("puzzle") {
-//                val data = getInput("$prefix/input.txt").asIntList()
-//                Day2.star2(data) shouldBe 1743
-//            }
-//        }
+        context("Star2") {
+            test("example") {
+                val data = getInput("$prefix/example.txt").asStringList()
+                Day2.star2(data) shouldBe 900
+            }
+            test("puzzle") {
+                val data = getInput("$prefix/input.txt").asStringList()
+                Day2.star2(data) shouldBe 1176514794
+            }
+        }
     }
 })

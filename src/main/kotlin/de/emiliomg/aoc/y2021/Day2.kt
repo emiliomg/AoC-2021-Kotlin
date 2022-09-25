@@ -24,4 +24,28 @@ object Day2 {
 
         return result.depth * result.horizontal
     }
+
+    fun star2(data: List<String>): Long {
+        data class Sub(val depth: Long, val horizontal: Long, val aim: Long) {
+            fun addForward(x: Long): Sub = this.copy(horizontal = this.horizontal + x)
+            fun addDepth(x: Long): Sub = this.copy(depth = this.depth + x)
+            fun addAim(x: Long): Sub = this.copy(aim = this.aim + x)
+        }
+
+        val result = data.fold(Sub(0, 0, 0)) { sub, command ->
+            with(command) {
+                val offset = command.split(" ").last().toLong()
+                when {
+                    startsWith("up") -> sub.addAim(-offset)
+                    startsWith("down") -> sub.addAim(offset)
+                    startsWith("forward") -> {
+                        sub.addForward(offset).addDepth(sub.aim * offset)
+                    }
+                    else -> throw Exception("zomg")
+                }
+            }
+        }
+
+        return result.depth * result.horizontal
+    }
 }
