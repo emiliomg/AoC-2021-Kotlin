@@ -1,7 +1,7 @@
 package de.emiliomg.aoc.y2021
 
-import de.emiliomg.aoc.y2021.Util.asIntList
-import de.emiliomg.aoc.y2021.Util.getInput
+import de.emiliomg.aoc.y2021.TestUtil.asIntList
+import de.emiliomg.aoc.y2021.TestUtil.getInput
 import io.kotest.core.spec.style.FunSpec
 import io.kotest.matchers.shouldBe
 
